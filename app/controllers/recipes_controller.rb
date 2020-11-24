@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
-      redirect_to recipe_path(@recipe), notice: "看板を更新しました。"
+      redirect_to recipe_path(@recipe), notice: "情報を更新しました。"
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
   def destroy
     recipe = Recipe.find(params[:id])
     recipe.destroy
-    redirect_to user_path(recipe.user), notice: "看板を削除しました。"
+    redirect_to user_path(recipe.user), notice: "削除しました。"
   end
 
   private
